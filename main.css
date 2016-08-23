@@ -8,7 +8,7 @@
 
 html, body {height: 100%; margin: 0; width: 100%;}
 
-img {min-width: 100%; transition: .8s transform;}
+img {min-width: 100%; transition: .8s all;}
 #p1 img {height: 150%;}
 #p2 img {height: 125%;}
 
@@ -21,10 +21,8 @@ img {min-width: 100%; transition: .8s transform;}
   z-index: -1;
 }
 
-#p1 {
-  background: black;
-  z-index: 2;
-}
+#p1 {z-index: 2;}
+#p1.hide {z-index: 0;}
 
 #p1, #p2 {
   overflow: hidden;
@@ -35,13 +33,12 @@ img {min-width: 100%; transition: .8s transform;}
   opacity: 1;
 }
 
-#p1i {
-  transform: translate3d(-150px,-150px,0);
-  position: relative;
-}
-#p2i {opacity: 0; transform: translate3d(0,50%,0);}
-.ani1 {opacity: 0; transform: translate3d(0,-50%,0); z-index: 0;}
-.ani2 {opacity: 1 !important; transform: translate3d(0,0,0) !important; z-index: 2 !important;}
+#p1i {position: relative; transform: translate3d(-150px,-150px,0);}
+/*#p1i.transit {transition: .1s margin;}*/
+
+#p2i {opacity: 0; transform: translate3d(-150px,450px,0);}
+.ani1 {opacity: 0; transform: translate3d(-150px,-450px,0) !important; z-index: 0 !important;}
+.ani2 {opacity: 1 !important; transform: translate3d(-150px,0px,0) !important; z-index: 2 !important;}
 
 #a1 {
   position: absolute;

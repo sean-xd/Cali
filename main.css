@@ -1,13 +1,24 @@
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Work Sans ExtraBold'), local('WorkSans-ExtraBold'), url(https://fonts.gstatic.com/s/worksans/v2/IQh-ap2Uqs7kl1YINeeEGhampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
 html, body {height: 100%; margin: 0; width: 100%;}
 
 img {min-width: 100%; transition: 1s all;}
 #p1 img {height: 150%;}
 #p2 img {height: 125%;}
 
-.container {
-  position: absolute;
-  height: 100%;
+.container {height: 100%; position: absolute; width: 100%;}
+.bg {
+  background: rgb(20,20,20);
+  height: 600px;
   width: 100%;
+  position: absolute;
+  z-index: -1;
 }
 
 #p1 {background: black;}
@@ -21,20 +32,9 @@ img {min-width: 100%; transition: 1s all;}
   opacity: 1;
 }
 
-#p2i {
-  transform: translate3d(0,50%,0);
-  opacity: 0;
-}
-
-.ani1 {
-  transform: translate3d(0,-50%,0);
-  opacity: 0;
-}
-
-.ani2 {
-  opacity: 1 !important;
-  transform: translate3d(0,0,0) !important;
-}
+#p2i {opacity: 0; transform: translate3d(0,50%,0);}
+.ani1 {opacity: 0; transform: translate3d(0,-50%,0);}
+.ani2 {opacity: 1 !important; transform: translate3d(0,0,0) !important;}
 
 #a1 {
   position: absolute;
@@ -42,4 +42,27 @@ img {min-width: 100%; transition: 1s all;}
   text-align: center;
   width: 100%;
   cursor: pointer;
+}
+
+#infobox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 150px;
+  width: 100%;
+  background: rgba(240,240,240,.8);
+  transition: .4s all;
+  transform: translate3d(0,150px,0);
+  box-shadow: 0px 0px 20px 5px rgba(20,20,20,.8);
+}
+
+#infobox.show {transform: translate3d(0,0,0);}
+
+#location {
+  position: absolute;
+  top: 250px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font: 80px "Work Sans";
 }

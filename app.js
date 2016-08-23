@@ -1,25 +1,39 @@
+// Globals
 var timeouts = {},
-  d = {
+  dom = {
     p1i: document.getElementById("p1i"),
     p2i: document.getElementById("p2i"),
     infobox: document.getElementById("infobox")
   };
 
+function scene(){
+  // load area (background, text)
+}
+
 function ani(){
-  d.p1i.classList.toggle("ani1");
-  d.p2i.classList.toggle("ani2");
-  if(timeouts.p1){
+  AreaToLocal();
+}
+
+function AreaToLocal(){
+  dom.p1i.classList.toggle("ani1");
+  dom.p2i.classList.toggle("ani2");
+  if(!dom.p1i.classList.contains("ani1")){
     clearTimeout(timeouts.p1);
-    toggleInfobox();
+    dom.infobox.classList.remove("show");
     timeouts.p1 = null;
   }
-  else timeouts.p1 = setTimeout(toggleInfobox, 700);
+  else timeouts.p1 = setTimeout(() => {
+    dom.infobox.classList.add("show");
+  }, 600);
 }
 
-function toggleLocation(){
-  d.location.classList.toggle("hide");
+// Utility Functions
+function clr(e, arr){
+  arr.forEach(_class => e.classList.remove(_class));
 }
 
-function toggleInfobox(){
-  d.infobox.classList.toggle("show");
-}
+dom.p1i.addEventListener("mousemove", e => {
+  var x = Math.floor(e.pageX * -1 / 6),
+    y = Math.floor(e.pageY * -1 / 6);
+  dom.p1i.setAttribute("style", `margin: ${y}px 0px 0px ${x}px;`);
+});

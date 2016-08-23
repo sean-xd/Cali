@@ -8,7 +8,7 @@
 
 html, body {height: 100%; margin: 0; width: 100%;}
 
-img {min-width: 100%; transition: 1s all;}
+img {min-width: 100%; transition: .8s transform;}
 #p1 img {height: 150%;}
 #p2 img {height: 125%;}
 
@@ -21,7 +21,10 @@ img {min-width: 100%; transition: 1s all;}
   z-index: -1;
 }
 
-#p1 {background: black;}
+#p1 {
+  background: black;
+  z-index: 2;
+}
 
 #p1, #p2 {
   overflow: hidden;
@@ -32,9 +35,13 @@ img {min-width: 100%; transition: 1s all;}
   opacity: 1;
 }
 
+#p1i {
+  transform: translate3d(-150px,-150px,0);
+  position: relative;
+}
 #p2i {opacity: 0; transform: translate3d(0,50%,0);}
-.ani1 {opacity: 0; transform: translate3d(0,-50%,0);}
-.ani2 {opacity: 1 !important; transform: translate3d(0,0,0) !important;}
+.ani1 {opacity: 0; transform: translate3d(0,-50%,0); z-index: 0;}
+.ani2 {opacity: 1 !important; transform: translate3d(0,0,0) !important; z-index: 2 !important;}
 
 #a1 {
   position: absolute;
@@ -47,18 +54,21 @@ img {min-width: 100%; transition: 1s all;}
 #infobox {
   position: absolute;
   bottom: 0;
+  background: rgba(0,0,0,.6);
   left: 0;
   height: 150px;
   width: 100%;
-  background: rgba(240,240,240,.8);
   transition: .4s all;
   transform: translate3d(0,150px,0);
-  box-shadow: 0px 0px 20px 5px rgba(20,20,20,.8);
+  box-shadow: 0px 0px 20px 5px rgba(0,0,0,.5);
 }
+.dark {background: rgba(0,0,0,.5);}
+.light {background: rgba(240,240,240,.6);}
 
 #infobox.show {transform: translate3d(0,0,0);}
 
 #location {
+  pointer-events: none;
   position: absolute;
   top: 250px;
   width: 100%;

@@ -9,7 +9,7 @@
 html, body {height: 100%; margin: 0; width: 100%;}
 
 img {min-width: 100%; transition: .8s all;}
-#p1 img {height: 150%;}
+#p1 img {height: 200%;}
 #p2 img {height: 125%;}
 
 .container {height: 100%; position: absolute; width: 100%;}

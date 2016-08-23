@@ -1,0 +1,45 @@
+html, body {height: 100%; margin: 0; width: 100%;}
+
+img {min-width: 100%; transition: 1s all;}
+#p1 img {height: 150%;}
+#p2 img {height: 125%;}
+
+.container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+#p1 {background: black;}
+
+#p1, #p2 {
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  height: 600px;
+  width: 800px;
+  opacity: 1;
+}
+
+#p2i {
+  transform: translate3d(0,50%,0);
+  opacity: 0;
+}
+
+.ani1 {
+  transform: translate3d(0,-50%,0);
+  opacity: 0;
+}
+
+.ani2 {
+  opacity: 1 !important;
+  transform: translate3d(0,0,0) !important;
+}
+
+#a1 {
+  position: absolute;
+  bottom: 40px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+}

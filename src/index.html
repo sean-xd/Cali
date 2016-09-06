@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Control // Escape</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- Backgrounds -->
+  <div class="backgrounds">
+    <img class="bg0 bg center" src="backgrounds/default.gif">
+  </div>
+
+  <!-- Overlays -->
+  <div class="overlays">
+    <div class="overlay-up"></div>
+    <div class="overlay-down"></div>
+    <div class="overlay-left"></div>
+    <div class="overlay-right"></div>
+  </div>
+
+  <!-- Quotes -->
+  <div class="quote hide"></div>
+
+  <!-- Characters -->
+  <div class="characters"></div>
+
+  <!-- Choices -->
+  <div class="choices hide up">
+    <div class="choiceA" onclick="choose('a')"></div>
+    <div class="choiceB" onclick="choose('b')"></div>
+  </div>
+
+  <!-- Dialogue -->
+  <div class="dialogue down">
+    <div class="cname-container hide">
+      <i class="material-icons triangle">play_arrow</i>
+      <div class="character-name"></div>
+    </div>
+    <div class="dialogue-text">
+      <div class="dialogue-line"></div>
+      <div class="cursor">|</div>
+    </div>
+  </div>
+
+  <!-- Main Menu -->
+  <div class="main-menu">
+    <div class="title">Control // Escape</div>
+    <div class="start">Start</div>
+    <div class="continue">Continue</div>
+    <div class="save-menu hide">
+      <div class="slot1">Empty</div>
+      <div class="slot2">Empty</div>
+      <div class="slot3">Empty</div>
+    </div>
+  </div>
+
+  <!-- Music -->
+  <div class="bg-music">
+    <audio class="music" src="music/sadpiano.mp3" autoplay loop></audio>
+    <i class="volume material-icons">volume_up</i>
+  </div>
+
+  <form class="login hide" action="javascript:login()">
+    <div class="login-title"></div>
+    <input type="text" class="email" placeholder="email">
+    <input type="password" class="password" placeholder="password">
+    <button type="submit" class="submit">Accept</button>
+  </form>
+
+  <!-- Footer Menu -->
+  <!-- <footer></footer> -->
+
+</body>
+</html>

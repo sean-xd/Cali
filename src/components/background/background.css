@@ -1,0 +1,21 @@
+/*Background */
+.backgrounds, .bg {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.backgrounds {
+  height: 100%;
+  width: 100%;
+}
+
+.bg {
+  display: block;
+  min-height: 100%;
+  min-width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(0,0,0);
+  transition: .8s all;
+}

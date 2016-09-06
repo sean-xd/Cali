@@ -1,0 +1,26 @@
+/* Quote */
+.quote {
+  left: 0;
+  padding-top: 20vh;
+  position: absolute;
+  top: 0;
+  transition: .8s all;
+  width: 100%;
+  cursor: default;
+  -webkit-user-select: none;
+}
+
+.line {
+  color: white;
+  font: 20px "Segoe UI", "Helvetica Neue";
+  margin: 0 auto;
+  max-width: 600px;
+  opacity: 1;
+  padding: 10px;
+  text-shadow: 1px 1px rgb(80,80,80), 1px -1px rgb(80,80,80), -1px 1px rgb(80,80,80), -1px -1px rgb(80,80,80);
+  transition: .8s all;
+}
+
+.author {
+  text-align: right;
+}

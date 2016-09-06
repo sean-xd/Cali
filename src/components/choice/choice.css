@@ -1,0 +1,25 @@
+/* Choices */
+.choices {
+  transition: .8s all;
+  position: absolute;
+  top: 35vh;
+  width: 100%;
+  text-align: center;
+}
+
+.choiceA, .choiceB {
+  background: white;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 20px;
+  margin: 40px;
+  opacity: .8;
+  font: 700 24px "Ubuntu";
+  transition: .2s all;
+  box-shadow: 0px 0px 20px 5px rgba(0,0,0,.5);
+  cursor: pointer;
+}
+
+.choiceA:hover, .choiceB:hover {
+  opacity: 1;
+}

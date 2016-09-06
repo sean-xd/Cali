@@ -1,0 +1,39 @@
+/* Characters */
+.characters {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.character {
+  bottom: 0;
+  box-sizing: border-box;
+  padding-left: 35%;
+  padding-right: 35%;
+  position: absolute;
+  transition: .6s all;
+  width: 100%;
+  -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.5));
+  -webkit-user-select: none;
+}
+
+.char-left {
+  padding-left: 0px;
+  padding-right: 70%;
+}
+
+.char-right {
+  padding-left: 70%;
+  padding-right: 0px;
+}
+
+.char-center {
+  padding-left: 35%;
+  padding-right: 35%;
+}
+
+.small {}
+.medium {}
+.large {}

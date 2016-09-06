@@ -1,0 +1,17 @@
+/* Reset */
+html, body {
+  background: rgb(20,20,20);
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Layers */
+/* 1 */ .backgrounds {z-index: 1;}
+/* 2 */ .overlays {z-index: 2;}
+/* 3 */ .characters {z-index: 3;}
+/* 4 */ .quote, .choices {z-index: 4;}
+/* 5 */ .dialogue {z-index: 5;}
+/* 6 */ .main-menu, .volume {z-index: 6;}
+/* 7 */ .login {z-index: 7;}

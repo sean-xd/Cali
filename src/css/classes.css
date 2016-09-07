@@ -9,3 +9,7 @@
 .blur1px {-webkit-filter: blur(1px);}
 .blur2px {-webkit-filter: blur(2px);}
 .halfhide {opacity: .5 !important;}
+
+.flip {
+  transform: rotateY(180deg);
+}

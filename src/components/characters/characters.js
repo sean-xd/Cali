@@ -6,7 +6,9 @@ dom.characters.root.addEventListener("click", nextStep);
 
 function addCharacter(name, src, dir){
   if(!dom.characters[name]){
-    dom.characters[name] = t("img", {src, className: `character char-${dir} hide ${dir[0] != 'c' ? dir : ''}`})();
+    dom.characters[name] = t("div", {className: `character char-${dir} hide ${dir[0] != 'c' ? dir : ''}`})([
+      t("img", {src, className: "cimg"})()
+    ]);
     dom.characters.root.appendChild(dom.characters[name]);
   }
   else {

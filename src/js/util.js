@@ -60,6 +60,23 @@ function unblur(element, ten){
   }
 }
 
+function flip(name){
+  return () => {
+    clt(el("cimg", dom.characters[name]), "flip");
+    nextStep();
+  };
+}
+
+function shake(name){
+  return () => {
+    cla(dom.characters[name], "shake");
+    setTimeout(() => {
+      clr(dom.characters[name], "shake");
+      nextStep();
+    }, 500);
+  }
+}
+
 function cond(check, success, fail, waitFor){
   return () => {
     if(waitFor && !check()) script.unshift(cond(check, success, fail, waitFor));

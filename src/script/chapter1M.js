@@ -9,6 +9,9 @@ assets["1M"] = () => {
   addCharacter("Eliza", "characters/Venture/Advance/Eliza/f338.png", "right");
   addCharacter("Art", "characters/Venture/Postal/Art/f342.png", "right");
   addCharacter("Zelda", "characters/Venture/Advance/Zelda/f091.png", "left");
+  addCharacter("Leffen", "characters/Venture/Advance/Leffen/f069.png", "left");
+  addCharacter("Hitomi", "characters/Venture/Advance/Hitomi/f071.png", "left");
+  addCharacter("Vector", "characters/Venture/Advance/Vector/f336.png", "left");
 };
 
 chapters["1M"] = [
@@ -32,9 +35,11 @@ chapters["1M"] = [
   characterChange("Jessica", "center"),
   characterChange("Eliza", "right"),
   line("How is Jessica still hungry? All she does is lay around stuffing her face..", "Serious Looking Girl"),
+  flip("Jessica"),
   line("Wh-what?! I went on plenty of patrols this week, it's not my fault there's nothing happening here.", "Jessica"),
   line("Didn't Art raid a bandit campsite yesterday? Oh, you sleep through all of your shifts so you wouldn't know..", "Serious Looking Girl"),
   hideCharacter("Eliza", "right"),
+  flip("Art"),
   characterChange("Art", "right"),
   line("Come on Eliza it's not her fault. It's my mistake for not waking her up.", "Art"),
   hideCharacter("Art", "right"),
@@ -48,15 +53,53 @@ chapters["1M"] = [
     nextStep();
   },
   line("Watcha doin?", "Eccentric Girl"),
+  shake("Myth"),
   line("Ah!", "Myth"),
+  flip("Jessica"),
+  shake("Jessica"),
   line("Eeeek!!!", "Jessica"),
-  () => {},
+  line("You idiot! Don't sneak up on me like that!", "Jessica"),
+  hideCharacter("Jessica", "right"),
+  line("Are you ok?", "Eccentric Girl"),
+  choice({text: "Yeah, totally.", script: [
+    characterChange("Art", "right"),
+    line("Hey, you guys are back. What were you able to pick up?")
+  ]}, {text: "Who are you people?", script: [
+
+  ]}),
+  hideCharacter("Zelda", "left"),
+  flip("Leffen"),
+  characterChange("Leffen", "left"),
+  line("Sorry, not much. We're going to have to do some more hunting in the morning.", "Responsible Boy"),
+  hideCharacter("Art", "right"),
+  characterChange("Myth", "right"),
+  characterChange("Leffen", "center"),
+  flip("Hitomi"),
+  characterChange("Hitomi", "left"),
+  line("It's ok. We don't have to eat anyway.", "Stoic Girl"),
+  hideCharacter("Hitomi", "left"),
+  characterChange("Leffen", "left"),
+  characterChange("Myth", "center"),
+  characterChange("Jessica", "right"),
+  line("Speak for yourself! Where's the food?!", "Jessica"),
+  hideCharacter("Jessica", "right"),
+  characterChange("Myth", "right"),
+  characterChange("Leffen", "center"),
+  characterChange("Vector", "left"),
+  line("Help! Bandits incoming!", "Frightened Boy"),
+
+  // line("Myth, let's go!", "Responsible Boy"),
+  // flip("Leffen"),
+  // choice({text: "Right behind you!", script: [
+  //
+  // ]}, {text: "*run away*", script: [
+  //
+  // ]}),
+  () => {}, //buffer
 
   // battle
 
-
-  // buffer
-  () => {},
+  () => {}, // buffer
   // End of chapter
   closeDialogue(1),
   background("center", 1),

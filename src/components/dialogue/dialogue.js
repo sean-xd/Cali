@@ -34,6 +34,7 @@ function line(str, name){
     else {
       clr(dom.cnameContainer, "hide");
       dom.characterName.textContent = name;
+      str = `"${str}"`;
     }
     script.unshift(() => {
       if(!intervals.dialogue) return nextStep();

@@ -1,6 +1,7 @@
 // Utility
-function el(name){
-  return document.getElementsByClassName(name)[0];
+function el(name, parent){
+  parent = parent || document;
+  return parent.getElementsByClassName(name)[0];
 }
 
 function clt(e, name){
@@ -10,7 +11,7 @@ function clt(e, name){
 
 function cla(e, name, unique){
   if(Array.isArray(name)) return name.forEach(n => cla(e, n));
-  if(unique) clr(el(name), name);
+  if(unique && el(name)) clr(el(name), name);
   e.classList.add(name);
 }
 
@@ -53,10 +54,20 @@ function blur(element, ten){
 function unblur(element, ten){
   return () => {
     if(element === "bg") element = dom.bgs[bgPosition];
+    else element = dom.characters[element];
     clr(element, ten === 10 ? "blur" : "blur1px");
     nextStep();
   }
 }
+
+function cond(check, success, fail, waitFor){
+  return () => {
+    if(waitFor && !check()) script.unshift(cond(check, success, fail, waitFor));
+    script = check() ? (success || []).concat(script) : (fail || []).concat(script);
+    nextStep();
+  };
+}
+
 
 // dom.p1i.addEventListener("mousemove", e => {
 //   var x = Math.floor(e.pageX * -1 / 6),

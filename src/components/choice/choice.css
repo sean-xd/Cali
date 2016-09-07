@@ -23,3 +23,7 @@
 .choiceA:hover, .choiceB:hover {
   opacity: 1;
 }
+
+.choiceA.blur2px, .choiceB.blur2px {
+  opacity: .6 !important;
+}

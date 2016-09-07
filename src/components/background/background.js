@@ -10,16 +10,17 @@ function addBackground(src, startDir){
 
 function background(dir, next){
   return () => {
-    cla(dom.bgs[bgPosition++], dir);
-    clr(dom.bgs[bgPosition], ["left", "right", "up", "down", "hide"]);
-    cla(dom.bgs[bgPosition], "center", 1);
+    if(dom.bgs[bgPosition]) cla(dom.bgs[bgPosition], dir);
+    bgPosition++;
+    if(dom.bgs[bgPosition]){
+      clr(dom.bgs[bgPosition], ["left", "right", "up", "down", "hide"]);
+      cla(dom.bgs[bgPosition], "center", 1);
+    }
     if(next) nextStep();
   }
 }
 
 function hideBackground(){
-  return () => {
-    cla(dom.bgs[bgPosition], "hide");
-    nextStep();
-  }
+  cla(dom.bgs[bgPosition], "hide");
+  nextStep();
 }

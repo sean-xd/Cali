@@ -1,9 +1,17 @@
 // Chapter 0
-addBackground("backgrounds/scene1.jpg", "down");
-addBackground("backgrounds/scene2.jpg");
-addCharacter("God", "characters/Kaia/Royals/God/f208.png", "center");
+assets[0] = () => {
+  addBackground("backgrounds/scene1.jpg", "down");
+  addBackground("backgrounds/scene2.jpg");
+  addBackground("backgrounds/dark-texture.jpg");
+  addCharacter("God", "characters/Kaia/Royals/God/f208.png", "center");
+};
+
+function saveExists(){return !!user.slots[0];}
+function userExists(){return !!user;}
+function personaExists(){return !!user.persona;}
 
 chapters[0] = [
+  closeMainMenu,
   background("up", 1),
   blur("bg", 10),
   quote("- Stephen Crane, War Is Kind and Other Poems", [
@@ -13,10 +21,10 @@ chapters[0] = [
     '"The fact has not created in me',
     'A sense of obligation."'
   ]),
-  hideBackground(),
+  hideBackground,
   background("center", 1),
   music("chillax"),
-  openDialogue(),
+  openDialogue(500),
   line("You wake up in a white room."),
   line("Well, maybe you're not awake."),
   line("You don't feel anything, and while you notice a light there's nothing in vision to focus on."),
@@ -25,24 +33,31 @@ chapters[0] = [
   characterChange("God", "center"),
   line("Congratulations. You've made it to the End of the World.", "Solemn Woman"),
   line("We're transferring you to the new universe we've created.", "Solemn Woman"),
-  line("Would you like to create an Identity or continue without one?", "Solemn Woman"),
-  choice({text: "Create an Identity", script: [
+  cond(userExists, [], [
+    line("You'll need an identity to continue.", "Solemn Woman"),
     characterChange("God", "right"),
-    blur(dom.characters.God),
+    blur("God"),
     closeDialogue(1),
-    openLogin("Creating New Identity"),
-    openDialogue(1000),
-    unblur(dom.characters.God),
-    characterChange("God", "center"),
-    line("Notice!"),
-    line("As armageddon has approached unexpectedly there may be a few hiccups in the universe that we can't immediately resolve."),
-    line("Please bear with us and report any bugs to the Global Infrastructure team."),
-    line("Welcome to Kaia, and enjoy the rest of eternity."),
-  ]}, {text: "Continue [Demo]", script: [
-    line("You'll be able to experience the world through the eyes of another."),
-    line("We look forward to this valuable experience.")
-  ]}),
+    openLogin
+  ], 1),
+  openDialogue(1000),
+  unblur("God"),
+  characterChange("God", "center"),
+  line("Choose your persona for this experience.", "Solemn Woman"),
+  cond(personaExists, [], [
+    hideCharacter("God"),
+    closeDialogue(1),
+    openCharacterSelect
+  ], 1),
+  closeCharacterSelect,
+  openDialogue(1000),
+  characterChange("God", "center"),
+  line("Notice!", "Solemn Woman"),
+  line("As armageddon has approached unexpectedly there may be a few hiccups in the universe that we can't immediately resolve.", "Solemn Woman"),
+  line("Please bear with us and report any bugs to the Global Infrastructure Team.", "Solemn Woman"),
+  line("Welcome to Kaia, and enjoy the rest of eternity.", "Solemn Woman"),
   hideCharacter("God"),
   closeDialogue(),
-  hideBackground()
+  background("center", 1),
+  openMainMenu("Save")
 ];

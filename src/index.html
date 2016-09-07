@@ -45,15 +45,64 @@
     </div>
   </div>
 
+  <!-- Character Select -->
+  <div class="character-select hide down">
+    <div class="character-a" onclick="characterSelection('A', 'Okari')">
+      <img class="cs-img" src="characters/Tera/Redelta/Okari/f265.png">
+      <div class="cs-info">
+        <div class="cs-name">Okari</div>
+        <div class="cs-accept" onclick="forceStep()">Accept</div>
+        <div class="cs-extra">
+          <img src="backgrounds/upcity.jpg" class="cs-extra-img">
+        </div>
+      </div>
+    </div>
+    <div class="character-b" onclick="characterSelection('B', 'Vincent')">
+      <img class="cs-img" src="characters/Kaia/University/Vincent/f255.png">
+      <div class="cs-info">
+        <div class="cs-name">Vincent</div>
+        <div class="cs-accept" onclick="forceStep()">Accept</div>
+        <div class="cs-extra">
+          <img src="backgrounds/infinitypool.jpeg" class="cs-extra-img">
+        </div>
+      </div>
+    </div>
+    <div class="character-c" onclick="characterSelection('C', 'Myth')">
+      <img class="cs-img" src="characters/Venture/Postal/Myth/f348.png">
+      <div class="cs-info">
+        <div class="cs-name">Myth</div>
+        <div class="cs-accept" onclick="forceStep()">Accept</div>
+        <div class="cs-extra">
+          <img src="backgrounds/milkyway.jpg" class="cs-extra-img">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Battle -->
+  <div class="battle">
+    <div class="allies"></div>
+    <div class="enemies"></div>
+  </div>
+
   <!-- Main Menu -->
   <div class="main-menu">
     <div class="title">Control // Escape</div>
     <div class="start">Start</div>
     <div class="continue">Continue</div>
     <div class="save-menu hide">
-      <div class="slot1">Empty</div>
-      <div class="slot2">Empty</div>
-      <div class="slot3">Empty</div>
+      <div class="slot0" onclick="saveToSlot(0)">
+        <div class="slot-name">Empty</div>
+        <div class="slot-chapter"></div>
+      </div>
+      <div class="slot1" onclick="saveToSlot(1)">
+        <div class="slot-name">Empty</div>
+        <div class="slot-chapter"></div>
+      </div>
+      <div class="slot2" onclick="saveToSlot(2)">
+        <div class="slot-name">Empty</div>
+        <div class="slot-chapter"></div>
+      </div>
     </div>
   </div>
 
@@ -64,10 +113,15 @@
   </div>
 
   <form class="login hide" action="javascript:login()">
-    <div class="login-title"></div>
+    <div class="login-title">
+      <div class="active-login new"></div>
+      <div class="new-account">New Account</div>
+      <div class="existing-account">Existing Account</div>
+    </div>
     <input type="text" class="email" placeholder="email">
     <input type="password" class="password" placeholder="password">
     <button type="submit" class="submit">Accept</button>
+    <div class="cancel" onclick="closeLogin()">Cancel</div>
   </form>
 
   <!-- Footer Menu -->

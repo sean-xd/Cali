@@ -1,26 +1,64 @@
 .login {
   box-shadow: 0px 0px 20px 5px rgba(0,0,0,.5);
-  position: absolute;
-  bottom: 40vh;
+  font-size: 0;
+  height: 178px;
   left: calc(50vw - 200px);
-  width: 400px;
   overflow: hidden;
-  height: 180px;
+  position: absolute;
+  top: 35vh;
   transition: .8s all;
+  width: 400px;
 }
-.login.hide {
-  height: 0px;
-}
-.login-small {
-  height: 45px;
-}
+.login.hide {height: 0px;}
 
 .login-title {
-  background: rgb(230,230,230);
-  cursor: default;
+  background: rgb(60,60,60);
+  font-size: 0;
+  height: 44px;
+  width: 100%;
 }
 
-.login-title, .email, .password, .submit {
+.new-account, .existing-account {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+.new-account {
+  left: 0;
+}
+
+.existing-account {
+  right: 0;
+}
+
+
+.new-account, .existing-account, .submit, .cancel {
+  border: none;
+  box-sizing: border-box;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  width: 50%;
+  font: 20px "Ubuntu";
+  transition: .3s all;
+  cursor: pointer;
+}
+.active-login.new {
+  float: left;
+  right: 50%;
+}
+.active-login {
+  transition: .4s all;
+  top: 0;
+  height: 44px;
+  position: absolute;
+  width: 50%;
+  right: 0;
+  background: rgb(20,20,20);
+}
+
+.email, .password {
   border: none;
   border-bottom: 1px solid rgba(40,40,40,.8);
   box-sizing: border-box;
@@ -28,12 +66,12 @@
   font: 20px "Ubuntu";
   padding: 10px;
   width: 100%;
-  opacity: .9;
 }
 .email, .password {
   background: white;
 }
-.submit {
-  background: rgb(230,230,230);
+.submit, .cancel {
+  color: white;
+  background: rgb(20,20,20);
   cursor: pointer;
 }

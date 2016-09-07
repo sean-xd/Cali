@@ -6,12 +6,12 @@ dom.characters.root.addEventListener("click", nextStep);
 
 function addCharacter(name, src, dir){
   if(!dom.characters[name]){
-    dom.characters[name] = t("img", {src, className: `character char-${dir} hide`})();
+    dom.characters[name] = t("img", {src, className: `character char-${dir} hide ${dir[0] != 'c' ? dir : ''}`})();
     dom.characters.root.appendChild(dom.characters[name]);
   }
   else {
     clr(dom.characters[name], ["char-left", "char-right"]);
-    if(dir) cla(dom.characters[name], "char-" + dir);
+    if(dir) cla(dom.characters[name], dir === "center" ? `char-${dir}` : [`char-${dir}`, dir]);
   }
 }
 

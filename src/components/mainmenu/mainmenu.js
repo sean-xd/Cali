@@ -2,6 +2,7 @@
 var saveMenuOpen = false,
   isContinue = false;
 dom.mainmenu = el("main-menu");
+dom.title = el("title");
 dom.start = el("start");
 dom.continue = el("continue");
 
@@ -43,9 +44,10 @@ function closeMainMenu(){
   nextStep();
 }
 
-function openMainMenu(title){
+function openMainMenu(title, start){
   return () => {
-    dom.start.textContent = title;
+    dom.title.textContent = title;
+    dom.start.textContent = start;
     closeSaveMenu(1);
     clr(dom.mainmenu, ["hide", "up"]);
   }

@@ -91,7 +91,7 @@ html, body {
 }
 
 .shake {
-  animation: shake .6s cubic-bezier(.36,.07,.19,.97) both;
+  animation: shake .7s cubic-bezier(.36,.07,.19,.97) both;
   transform: translate3d(0,0,0);
   backface-visibility: hidden;
 }
@@ -109,14 +109,16 @@ html, body {
   padding-left: 35%;
   padding-right: 35%;
   position: absolute;
-  transition: .6s all;
+  transition: .7s all;
   width: 100%;
   -webkit-filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.5));
   -webkit-user-select: none;
+  transform: translate3d(0,0,0);
 }
 
 .cimg {
-  transition: .6s all;
+  transform: translate3d(0,0,0);
+  transition: .7s all;
   width: 100%;
 }
 
@@ -271,7 +273,7 @@ html, body {
   padding: 20px;
   margin: 40px;
   opacity: .8;
-  font: 700 24px "Ubuntu";
+  font: 24px "Ubuntu";
   transition: .2s all;
   box-shadow: 0px 0px 20px 5px rgba(0,0,0,.5);
   cursor: pointer;
@@ -358,84 +360,6 @@ html, body {
   to {opacity: .25;}
 }
 
-.login {
-  box-shadow: 0px 0px 20px 5px rgba(0,0,0,.5);
-  font-size: 0;
-  height: 178px;
-  left: calc(50vw - 200px);
-  overflow: hidden;
-  position: absolute;
-  top: 35vh;
-  transition: .8s all;
-  width: 400px;
-}
-.login.hide {height: 0px;}
-
-.login-title {
-  background: rgb(60,60,60);
-  font-size: 0;
-  height: 44px;
-  width: 100%;
-}
-
-.new-account, .existing-account {
-  position: absolute;
-  top: 0;
-  z-index: 2;
-}
-.new-account {
-  left: 0;
-}
-
-.existing-account {
-  right: 0;
-}
-
-
-.new-account, .existing-account, .submit, .cancel {
-  border: none;
-  box-sizing: border-box;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  display: inline-block;
-  width: 50%;
-  font: 20px "Ubuntu";
-  transition: .3s all;
-  cursor: pointer;
-}
-.active-login.new {
-  float: left;
-  right: 50%;
-}
-.active-login {
-  transition: .4s all;
-  top: 0;
-  height: 44px;
-  position: absolute;
-  width: 50%;
-  right: 0;
-  background: rgb(20,20,20);
-}
-
-.email, .password {
-  border: none;
-  border-bottom: 1px solid rgba(40,40,40,.8);
-  box-sizing: border-box;
-  display: block;
-  font: 20px "Ubuntu";
-  padding: 10px;
-  width: 100%;
-}
-.email, .password {
-  background: white;
-}
-.submit, .cancel {
-  color: white;
-  background: rgb(20,20,20);
-  cursor: pointer;
-}
-
 /* Main Menu */
 .main-menu {
   left: 0;
@@ -517,6 +441,84 @@ html, body {
 
 .slot-chapter {
   font: 16px "Ubuntu";
+}
+
+.login {
+  box-shadow: 0px 0px 20px 5px rgba(0,0,0,.5);
+  font-size: 0;
+  height: 178px;
+  left: calc(50vw - 200px);
+  overflow: hidden;
+  position: absolute;
+  top: 35vh;
+  transition: .8s all;
+  width: 400px;
+}
+.login.hide {height: 0px;}
+
+.login-title {
+  background: rgb(60,60,60);
+  font-size: 0;
+  height: 44px;
+  width: 100%;
+}
+
+.new-account, .existing-account {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+.new-account {
+  left: 0;
+}
+
+.existing-account {
+  right: 0;
+}
+
+
+.new-account, .existing-account, .submit, .cancel {
+  border: none;
+  box-sizing: border-box;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  width: 50%;
+  font: 20px "Ubuntu";
+  transition: .3s all;
+  cursor: pointer;
+}
+.active-login.new {
+  float: left;
+  right: 50%;
+}
+.active-login {
+  transition: .4s all;
+  top: 0;
+  height: 44px;
+  position: absolute;
+  width: 50%;
+  right: 0;
+  background: rgb(20,20,20);
+}
+
+.email, .password {
+  border: none;
+  border-bottom: 1px solid rgba(40,40,40,.8);
+  box-sizing: border-box;
+  display: block;
+  font: 20px "Ubuntu";
+  padding: 10px;
+  width: 100%;
+}
+.email, .password {
+  background: white;
+}
+.submit, .cancel {
+  color: white;
+  background: rgb(20,20,20);
+  cursor: pointer;
 }
 
 /* Music */
@@ -610,7 +612,7 @@ html, body {
 .blur {-webkit-filter: blur(10px);}
 .blur1px {-webkit-filter: blur(1px);}
 .blur2px {-webkit-filter: blur(2px);}
-.halfhide {opacity: .5 !important;}
+.halfhide {opacity: .35 !important; transform: translate3d(0,100px,0);}
 
 .flip {
   transform: rotateY(180deg);

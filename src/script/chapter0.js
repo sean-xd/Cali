@@ -59,5 +59,5 @@ chapters[0] = [
   hideCharacter("God"),
   closeDialogue(),
   background("center", 1),
-  openMainMenu("Save")
+  openMainMenu("End Sequence 0", "Save")
 ];

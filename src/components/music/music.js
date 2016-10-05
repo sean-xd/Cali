@@ -10,6 +10,11 @@ dom.volume.addEventListener("click", () => {
   dom.music[muting ? "pause" : "play"]();
 });
 
+window.addEventListener("message", e => {
+  if(e.data === "stopMusic") dom.music.volume = 0;
+  if(e.data === "playMusic") dom.music.volume = .5;
+}, false);
+
 function music(song){
   return () => {
     var pos = 0, swap = 0;

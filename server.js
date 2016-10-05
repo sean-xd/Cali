@@ -62,7 +62,7 @@ app.post("/update", (req, res) => {
   res.send(JSON.stringify({success: true}));
 });
 
-app.listen(3000);
+app.listen(4260);
 
 function saveUsers(){
   fs.writeFile(__dirname + "/db/users.json", JSON.stringify(users));

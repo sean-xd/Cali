@@ -22,6 +22,12 @@
   font: 700 90px "Quicksand";
 }
 
+@media (max-width: 500px) {
+  .title {
+    font: 700 40px "Quicksand";
+  }
+}
+
 .start, .continue {
   box-sizing: border-box;
   color: white;

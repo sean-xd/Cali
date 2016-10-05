@@ -11,7 +11,10 @@ dom.volume.addEventListener("click", () => {
 });
 
 window.addEventListener("message", e => {
-  if(e.data === "stopMusic") dom.music.stop();
+  if(e.data === "stopMusic"){
+    dom.music.pause();
+    dom.music.currentTime = 0;
+  }
   if(e.data === "playMusic") dom.music.play();
 }, false);
 

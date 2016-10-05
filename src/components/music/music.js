@@ -11,8 +11,8 @@ dom.volume.addEventListener("click", () => {
 });
 
 window.addEventListener("message", e => {
-  if(e.data === "stopMusic") dom.music.volume = 0;
-  if(e.data === "playMusic") dom.music.volume = .5;
+  if(e.data === "stopMusic") dom.music.stop();
+  if(e.data === "playMusic") dom.music.play();
 }, false);
 
 function music(song){
